@@ -1,16 +1,6 @@
 import { Box, Button, Collapse, Grid, IconButton, Typography } from "@mui/material";
-
 import React from "react";
-import { useState } from "react";
-import SendIcon from '@mui/icons-material/Send';
-import { useGlobalProvider } from "../utils/themeContext";
-import axios from "axios";
-import { useRef } from "react";
-import { useEffect } from "react";
-import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 const contact = () => {
-    const { colors } = useGlobalProvider();
-
     return <Box className="py-10 ">
         <div className="flex flex-col px-5 py-5 gap-5">
             <Typography className="text-center md:text-start font-quicksand font-[500] text-[40px] md:text-4xl ">
