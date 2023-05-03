@@ -9,6 +9,7 @@ import Blogs from "../components/Blogs";
 import Chat from "../components/Chat";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import About from "../components/About";
 const Index = () => {
   const { colors } = useGlobalProvider();
 
@@ -17,14 +18,12 @@ const Index = () => {
       <Hero />
       <Services />
       <Meeting />
-      {/* <Chat /> */}
-
-
+      <Chat />
+      <About />
       {/* <Projects /> */}
       {/* <Blogs /> */}
       {/* <div className="h-[1px] w-screem bg-black my-5 opacity-50"></div> */}
       {/* <Contact /> */}
-      <Footer />
     </Box>
   )
 

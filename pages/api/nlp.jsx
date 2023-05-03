@@ -3,15 +3,19 @@ import { model } from "../../lib/nlpManager";
 import path from 'path'
 const fs = require('fs/promises');
 
-const manager = new NlpManager({ languages: ['en'] });
-model(manager);
+// const manager = new NlpManager({ languages: ['en'] });
+// model(manager);
 
 
-(async () => {
-    await manager.train();
-    manager.save();
-})();
+// (async () => {
+//     await manager.train();
+//     manager.save();
+// })();
 const predict = async (name) => {
+    const manager = new NlpManager({ languages: ['en'] });
+    const modelPath = path.join(process.cwd(), 'model.nlp')
+    const data = await fs.readFile(modelPath, 'utf8');
+    manager.import(data);
     const response = await manager.process('en', `${name}`);
     const score1 = response.classifications.map(score => score);
     const score = Math.max(...score1.map(score => score.score))

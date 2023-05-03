@@ -54,7 +54,7 @@ export default function Sidebar({ open, setOpen }) {
                         About
                     </Button>
                 </Link>
-                <Link href="/home">
+                <Link href="/contact">
                     <Button className='font-jost font-[400] text-[25px] text-black capitalize'>
                         Contact
                     </Button>

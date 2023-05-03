@@ -93,11 +93,8 @@ const Chat = () => {
 
         <Grid item xs={12} md={6}>
 
-            <Typography className="font-outfit font-[500] text-4xl md:text-[50px]  text-center md:text-start  text-black gap-4">
+            {/* <Typography className="font-outfit font-[500] text-4xl md:text-[50px]  text-center md:text-start  text-black gap-4">
                 Let’s Have a <span className="te"> Chat </span>
-            </Typography>
-            {/* <Typography sx={{ display: display("xs") }} className="font-outfit font-[500] text-4xl md:text-[50px]  text-center md:text-start  text-black gap-4 justify-center">
-                Let’s Have a<span className=""> Chat </span>
             </Typography> */}
             <Box >
                 <Box className="flex flex-col  h-[70vh] p-1 " >
@@ -122,13 +119,13 @@ const Chat = () => {
                             <Box className="h-full flex justify-center flex-col items-center ">
                                 <img src="/hello.gif" alt="" className="w-[300px] w-full " />
                                 <Typography className=" w-full text-center " variant="h6" fontFamily="Questrial" >
-                                    Enter Message to start chating
+                                    Wanna know anything about me? Ask RightGPT
                                 </Typography>
                             </Box>
 
                     }
                     <Box className="flex  gap-2  mt-10 shadow-lg p-2 rounded-md" component="form" onSubmit={submit}>
-                        <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Enter your message " id="name" className="rounded-md p-2 outline-none w-full " />
+                        <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Ask me anything , e.g what are your skills " id="name" className="rounded-md p-2 outline-none w-full " />
                         <Button type="submit" className="text-white text-xl text">
                             {loading ? '....' : "Send"}
                         </Button>

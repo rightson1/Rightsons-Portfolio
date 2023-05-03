@@ -69,7 +69,7 @@ function Navbar({ homepage }) {
                         About
                     </Button>
                 </Link>
-                <Link href="/home">
+                <Link href="/contact">
                     <Button className='font-jost font-[400] text-[18px] text-black capitalize'>
                         Contact
                     </Button>
@@ -90,13 +90,13 @@ function Navbar({ homepage }) {
             >
                 <Toolbar disableGutters className='justify-between items-center'
                 >
-                    <Link href={"/home"}>
+                    <Link href={"/"}>
                         <Box sx={{
                             flexGrow: {
                                 xs: 1,
                                 md: 0,
                             }
-                        }} className="flex items-center gap-2">
+                        }} className="flex items-center gap-2 cursor-pointer">
 
                             <Box component={"img"} src="/logo.png" className=' h-10'
                             />
