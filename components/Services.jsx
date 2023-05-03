@@ -1,26 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Typography, Box, Grid } from "@mui/material";
-import { motion } from "framer-motion";
-import { useInView } from 'react-intersection-observer';
-const Services = () => {
-    const [width, setWidth] = useState(10);
-    const handleScroll = () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const newWidth = 16 + scrollTop / 10;
-        setWidth(newWidth);
-    };
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+const Services = () => {
+
     return <Box className="w-full flex flex-col">
         <div className="flex">
-            <motion.div
-                animate={{ width: `${width}vw` }}
-                className="h-[1px] bg-black"></motion.div>
+            <div
+
+                className="h-[1px] bg-black w-[80vw]"></div>
         </div>
 
         <Grid container className="py-10 px-5 md:px-20" rowSpacing={5}>
