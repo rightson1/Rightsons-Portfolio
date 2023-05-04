@@ -6,8 +6,8 @@ import { format } from "timeago.js";
 import RichText from "../../components/RichText";
 
 const Blog = ({ post }) => {
+    if (!post) return <div>loading...</div>;
     const { title, description, featuredImage: { fields: { file: { url } } }, content, date } = post.fields
-    console.log(url)
     return <Box className="py-10 ">
         <div className="flex flex-col px-5 py-5 gap-5">
             <Typography className="text-center md:text-start  font-[500] text-[40px] md:text-4xl  " fontFamily="Alegreya">
@@ -85,7 +85,7 @@ export const getStaticProps = async ({ params }) => {
         'fields.slug': slug
     })
 
-    if (!response?.items?.length) {
+    if (!response?.items?.length > 0) {
         return {
             redirect: {
                 destination: '/',

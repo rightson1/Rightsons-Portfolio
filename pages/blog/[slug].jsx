@@ -6,6 +6,7 @@ import { format } from "timeago.js";
 import RichText from "../../components/RichText";
 
 const Blog = ({ post }) => {
+    if (!post) return <div>loading...</div>
     const { title, description, featuredImage: { fields: { file: { url } } }, content, date } = post.fields
 
     return <Box className="py-10 ">
@@ -85,7 +86,7 @@ export const getStaticProps = async ({ params }) => {
         'fields.slug': slug
     })
 
-    if (!response?.items?.length) {
+    if (!response?.items?.length > 0) {
         return {
             redirect: {
                 destination: '/',
