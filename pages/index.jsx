@@ -24,23 +24,15 @@ const Index = ({ posts }) => {
 
 };
 export const getStaticProps = async () => {
-  try {
-    const response = await client.getEntries({ content_type: 'blogs' })
-    return {
-      props: {
-        posts: response.items,
-        revalidate: 60
-      },
+
+  const response = await client.getEntries({ content_type: 'blogs' })
+  return {
+    props: {
+      posts: response.items,
       revalidate: 60
-    }
-  } catch (e) {
-    return {
-      props: {
-        posts: [],
-        revalidate: 60
-      },
-      revalidate: 60
-    }
+    },
+    revalidate: 60
   }
+
 }
 export default Index;
