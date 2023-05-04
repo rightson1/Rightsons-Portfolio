@@ -8,7 +8,7 @@ import { useGlobalProvider } from '../utils/themeContext';
 import { Button, IconButton } from '@mui/material';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Typography } from '@mui/material';
 export default function Sidebar({ open, setOpen }) {
     const { colors } = useGlobalProvider()
@@ -112,25 +112,28 @@ export default function Sidebar({ open, setOpen }) {
         <div>
 
             <React.Fragment >
-
-                {
-                    open && <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <Drawer
-                            onClose={() => setOpen(false)}
-                            anchor="top"
-                            className='bg-[rgba(0,0,0,0.5)]]'
-                            open={open}
+                <AnimatePresence>
+                    {
+                        open && <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
                         >
-                            {list()}
-                        </Drawer>
-                    </motion.div>
+                            <Drawer
+                                onClose={() => setOpen(false)}
+                                anchor="top"
+                                className='bg-[rgba(0,0,0,0.5)]]'
+                                open={open}
+                            >
+                                {list()}
+                            </Drawer>
+                        </motion.div>
 
-                }
+                    }
+
+                </AnimatePresence>
+
 
 
             </React.Fragment>

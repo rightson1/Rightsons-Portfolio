@@ -92,7 +92,7 @@ const Chat = () => {
 
                     }
                     <Box className="flex  gap-2   shadow-lg rounded-md bg-white  py-3 mb-5 px-4 border-[1px] border-[rgba(0,0,0,.1)]" component="form" onSubmit={submit}>
-                        <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Ask me anything , e.g what are your skills " id="name" className="rounded-md p-2 outline-none w-full " />
+                        <input type="text" autoComplete="off" value={text} onChange={(e) => setText(e.target.value)} placeholder="Ask me anything , e.g what are your skills " id="name" className="rounded-md p-2 outline-none w-full " />
                         <Button type="submit" className="text-white text-xl text">
                             {loading ? <CircularProgress className="text-black" />
                                 : "Send"}

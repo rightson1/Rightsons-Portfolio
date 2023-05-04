@@ -17,7 +17,6 @@ import Footer from "../components/Footer";
 import ScrollToTop from "react-scroll-to-top";
 import dynamic from "next/dynamic";
 import "../styles/nprogress.css";
-import { AnimatePresence } from "framer-motion";
 const TopProgressBar = dynamic(
   () => {
     return import("../components/TopProgress");
@@ -51,14 +50,13 @@ function MyApp(props) {
         <ThemeProvider>
           <div className="w-[100vw] overflow-x-hidden">
             <div className="w-screen overflow-x-hidden">
-              <AnimatePresence>
-                <Navbar homepage={Component.homepage} />
-                <TopProgressBar />
-                <Component {...pageProps} />
-                <Toaster />
-                <ScrollToTop smooth color={"#00000"} height="15px" className="top" />
-                <Footer />
-              </AnimatePresence>
+
+              <Navbar homepage={Component.homepage} />
+              <TopProgressBar />
+              <Component {...pageProps} />
+              <Toaster />
+              <ScrollToTop smooth color={"#00000"} height="15px" className="top" />
+              <Footer />
 
             </div>
           </div>
