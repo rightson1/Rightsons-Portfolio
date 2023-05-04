@@ -26,7 +26,7 @@ const Projects = ({ posts }) => {
     const displayedPosts = posts?.slice(startIndex, endIndex);
     const Single = ({ project }) => {
         const { fields: { title, slug, featuredImage: { fields: { file: { url } } }, description } } = project
-        return <Grid item xs={12} md={4} className="cursor-pointer">
+        return <Grid item xs={12} md={4} className="">
             <Title title="Projects Page" content=" Rightson Tole projects made using  Mongo db, React, Node.js, Next.js, Firebase, WordPress, and PHP" />
             <Box className="flex justify-center  relative ">
                 <img src={url} alt="hfoods" className="w-full h-[300px] sm:h-[350px] md:h-[250px] object-cover" />
@@ -43,7 +43,7 @@ const Projects = ({ posts }) => {
                     {title}
                 </Typography>
                 <Link href={`/projects/${slug}`}>
-                    <a className="flex items-center justify-center self-start ">
+                    <a className="flex items-center justify-center self-start  cursor-pointer">
                         <Typography variant="h1" fontFamily="Questrial" className=" text-black font-jost text-xl" >
                             Read More
                         </Typography>

@@ -33,7 +33,7 @@ const Contact = () => {
         <Title title="Contact Page" description={"Contact Rightson Tole , a Kenyan web developer living in Nairobi with expertise in Mongo db, React, Node.js, Next.js, Firebase, WordPress, and PHP"} />
         <div className="flex flex-col px-5 py-5 gap-5">
             <Typography className="text-center md:text-start  font-[500] text-[40px] md:text-4xl  " fontFamily="Alegreya">
-                Contact Us
+                Contact Me
             </Typography>
             <Typography className="text-center md:text-start font-jt text-xl md:text-2xl">
                 Home / Contact

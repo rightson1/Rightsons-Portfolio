@@ -93,12 +93,7 @@ function Navbar({ homepage }) {
                 <Toolbar disableGutters className='justify-between items-center z-[5]'
                 >
                     <Link href={"/"}>
-                        <Box sx={{
-                            flexGrow: {
-                                xs: 1,
-                                md: 0,
-                            }
-                        }} className="flex items-center gap-2 cursor-pointer">
+                        <Box className="flex items-center gap-2 cursor-pointer">
 
 
                             <Box className='flex gap-2 items-center '>
