@@ -10,22 +10,7 @@ import { toast } from "react-hot-toast";
 import { useRouter } from "next/router";
 
 const Slide = ({ items, dashboard }) => {
-    const { user } = useAuth();
-    const router = useRouter();
-    const submit = (link, title) => {
-        router.push(link)
-        // if (!user.plan) {
-        //     toast.error("You are not subscribed to any plan")
-        // } else if (user.plan === "beginner") {
-        //     if (title !== "beginner") {
-        //         toast.error("You are not subscribed to this plan");
-        //     } else {
-        //         router.push(link)
-        //     }
-        // } else {
-        //     router.push(link)
-        // }
-    }
+
     return <Box
         sx={{
             "& .swiper-pagination-bullet": {
@@ -60,24 +45,7 @@ const Slide = ({ items, dashboard }) => {
                                     </Typography>
 
 
-                                    {
-                                        dashboard && <div className="flex justify-center">
 
-                                            <Button onClick={() => submit(`/workout/${title?.toLowerCase()}`, title)}
-                                                className="w-[150px] "
-                                                sx={{
-                                                    border: "1px solid white",
-                                                    color: "white",
-                                                    "&:hover": {
-                                                        color: "black",
-                                                        backgroundColor: "white"
-                                                    }
-                                                }}
-                                            >
-                                                Begin
-                                            </Button>
-                                        </div>
-                                    }
 
                                 </div>
                                 <Box

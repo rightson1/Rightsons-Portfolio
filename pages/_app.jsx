@@ -14,6 +14,7 @@ import "swiper/swiper-bundle.css";
 import { Toaster } from "react-hot-toast";
 import 'regenerator-runtime/runtime';
 import Footer from "../components/Footer";
+
 function MyApp(props) {
   const clientSideEmotionCache = createEmotionCache();
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;

@@ -54,19 +54,20 @@ function Navbar({ homepage }) {
                 flexGrow: 1,
             }}
             >
-                <Link href="/home">
+                <Link href="/">
                     <Button className='font-jost font-[400] text-[18px] text-black capitalize'>
                         Home
                     </Button>
                 </Link>
-                <Link href="/home">
+
+                <Link href="/chat">
                     <Button className='font-jost font-[400] text-[18px] text-black capitalize'>
-                        Projects
+                        Rightgpt
                     </Button>
                 </Link>
-                <Link href="/home">
+                <Link href="/projects">
                     <Button className='font-jost font-[400] text-[18px] text-black capitalize'>
-                        About
+                        Projects
                     </Button>
                 </Link>
                 <Link href="/contact">
@@ -79,10 +80,11 @@ function Navbar({ homepage }) {
         )
     }
     return (
-        <AppBar position="static" className=' shadow-none relative h-[80px] flex justify-center items-center border-b-[1px] border-black'
+        <AppBar className=' shadow-none relative  flex justify-center items-center border-b-[1px] border-black'
             sx={{
                 backgroundColor: 'white',
                 color: 'black',
+                height: { xs: "80px", sm: "100px", md: '80px' }
             }}
         >
             <Container maxWidth="xl" className='bg-transparent '
@@ -98,13 +100,12 @@ function Navbar({ homepage }) {
                             }
                         }} className="flex items-center gap-2 cursor-pointer">
 
-                            <Box component={"img"} src="/logo.png" className=' h-10'
-                            />
-                            <Box className='flex gap-2 items-center mt-2'>
-                                <Typography fontFamily={"faito"} className='text-2xl md:text-3xl font-[500]'>
+
+                            <Box className='flex gap-2 items-center '>
+                                <Typography fontFamily={"Alegreya"} className='text-3xl md:text-4xl font-[400]'>
                                     Chari
                                 </Typography>
-                                <Typography fontFamily={"faito"} className='text-3xl md:text-4xl '>
+                                <Typography fontFamily={"Alegreya"} className='text-3xl md:text-4xl font-[500]'>
                                     Rightson
                                 </Typography>
                             </Box>
@@ -122,7 +123,7 @@ function Navbar({ homepage }) {
                             <EmailIcon className='text-white' />
                         </Box>
                         <Typography className='text-[18px]  font-jost font-[600]' >
-                            chari.rightson@gamil.com
+                            chari.rightson@gmail.com
                         </Typography>
 
                     </Box>

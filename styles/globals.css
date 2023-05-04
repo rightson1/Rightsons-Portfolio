@@ -25,12 +25,7 @@ body {
   bottom: 60px !important;
   right: 20px !important;
 }
-@font-face {
-  font-family: "faito";
-  src: url("../public/faito.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+
 /* For WebKit-based browsers (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
   width: 8px;
@@ -51,16 +46,16 @@ body {
     90deg,
     rgba(254, 54, 86, 1) 0%,
     rgba(255, 56, 0, 1) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 .blog {
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 40%,
-    rgba(128, 38, 50, 1) 100%
+    rgba(102, 102, 102, 1) 0%,
+    rgba(101, 87, 87, 1) 39%,
+    rgba(43, 0, 0, 1) 100%
   );
 
   -webkit-background-clip: text;

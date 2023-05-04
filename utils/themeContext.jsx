@@ -30,8 +30,6 @@ export const ThemeProvider = ({ children }) => {
     }, [state])
     const colors = tokens(mode);
     const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
-
-
     return (
         <ThemeContext.Provider
             value={{

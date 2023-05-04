@@ -17,7 +17,7 @@ const About = () => {
     return <Box className="w-full  bg-black py-10 md:py-20 flex flex-col justify-center items-center gap-8 md:gap-[50px]  px-[10px]">
         <Grid container>
             <Grid item xs={12} md={8}>
-                <Typography className="text-4xl md:text-[60px] text-center  blogTitle py-10 font-[600] tracking-widest">
+                <Typography className="text-4xl sm:text-[3rem] md:text-[3.8rem] xl:text-[5rem] text-center  blogTitle py-10 font-[600] tracking-[10px] font-aleg " sx={{ wordSpacing: "25px " }}>
                     About Me
                 </Typography>
                 <div className="flex flex-col gap-8 opacity-90">
@@ -36,7 +36,7 @@ const About = () => {
                 </div>
             </Grid>
             <Grid item xs={12} md={4} className="flex justify-center items-center flex-col">
-                <Typography className="text-4xl md:text-[60px] text-center  text-white py-10 font-[600] md:pb-20">
+                <Typography className="text-4xl sm:text-[3rem] md:text-[3.8rem] xl:text-[5rem] text-center font-aleg text-white py-10 font-[600] md:pb-20">
                     About Me
                 </Typography>
                 <SingleAbout title="256 +" description="Projects Complete" />

@@ -22,9 +22,10 @@ export default function Sidebar({ open, setOpen }) {
 
         setOpen(click);
     };
+    const MotionBox = motion(Box)
 
     const list = () => (
-        <Box className="px-2 bg-transparent flex flex-col justify-center items-center"
+        <Box className="px-2 bg-transparent flex flex-col justify-center items-center "
             sx={{
                 py: 2,
                 pb: 5,
@@ -34,57 +35,76 @@ export default function Sidebar({ open, setOpen }) {
             onKeyDown={toggleDrawer(false)}
 
         >
-            <Button>
+            <Button className='sm:py-5'>
                 <img src="/close.png" alt="" className='w-[35px]' />
             </Button>
-            <Box className=" flex flex-col justify-center items-center my-5"
+            <Box className=" flex flex-col justify-center items-center my-5 sm:gap-5 sm:py-10"
+
             >
-                <Link href="/home">
-                    <Button className='font-jost font-[400] text-[25px] text-black capitalize'>
+                <Link href="/">
+                    <Button className='font-aleg w-[90vw]  font-[300] text-[25px] text-black capitalize'>
                         Home
                     </Button>
                 </Link>
-                <Link href="/home">
-                    <Button className='font-jost font-[400] text-[25px] text-black capitalize'>
-                        Projects
-                    </Button>
-                </Link>
-                <Link href="/home">
-                    <Button className='font-jost font-[400] text-[25px] text-black capitalize'>
-                        About
+                <Link href="/chat">
+                    <Button className='font-aleg w-[90vw] font-[300] text-[25px] text-black capitalize'>
+                        rightgpt
                     </Button>
                 </Link>
                 <Link href="/contact">
-                    <Button className='font-jost font-[400] text-[25px] text-black capitalize'>
+                    <Button className='font-aleg w-[90vw] font-[300] text-[25px] text-black capitalize'>
                         Contact
                     </Button>
                 </Link>
+                <Link href="/projects">
+                    <Button className='font-aleg w-[90vw] font-[300] text-[25px] text-black capitalize'>
+                        Projects
+                    </Button>
+                </Link>
             </Box>
-            <div className="flex gap-4">
-                <motion.div className="bg-black cursor-pointer p-2 flex items-center justify-center rounded-lg"
+            <div className="flex gap-4 sm:py-10">
+                <MotionBox className=" cursor-pointer p-2 flex items-center justify-center rounded-lg"
+                    sx={{
+                        bgcolor: "#3e65cf"
+
+                    }}
                     whileHover={{ scale: 1.1 }}
                 >
                     <EmailIcon className='text-white' />
-                </motion.div>
-                <motion.div className="bg-black cursor-pointer p-2 flex items-center justify-center rounded-lg"
+                </MotionBox>
+                <MotionBox sx={{
+                    bgcolor: colors.blueish[500]
+                }} className=" cursor-pointer p-2 flex items-center justify-center rounded-lg"
                     whileHover={{ scale: 1.1 }}
                 >
                     <GitHubIcon className='text-white' />
-                </motion.div>
-                <motion.div className="bg-black cursor-pointer p-2 flex items-center justify-center rounded-lg"
+                </MotionBox>
+                <MotionBox sx={{
+                    bgcolor: "#25D366"
+                }}
+                    className="cursor-pointer p-2 flex items-center justify-center rounded-lg"
                     whileHover={{ scale: 1.1 }}
                 >
                     <WhatsAppIcon className='text-white' />
-                </motion.div>
+                </MotionBox>
             </div>
             <Link href={"/home"}>
-                <Box className='flex gap-2 items-center my-10'>
-                    <Typography fontFamily={"faito"} className='text-2xl md:text-3xl font-[500]'>
-                        Chari
-                    </Typography>
-                    <Typography fontFamily={"faito"} className='text-3xl md:text-4xl '>
-                        Rightson
-                    </Typography>
+                <Box sx={{
+                    flexGrow: {
+                        xs: 1,
+                        md: 0,
+                    }
+                }} className="flex items-center gap-2 cursor-pointer py-10">
+
+
+                    <Box className='hidden sm:flex gap-2 items-center '>
+                        <Typography fontFamily={"Alegreya"} className='text-3xl md:text-4xl font-[400]'>
+                            Chari
+                        </Typography>
+                        <Typography fontFamily={"Alegreya"} className='text-3xl md:text-4xl font-[500]'>
+                            Rightson
+                        </Typography>
+                    </Box>
                 </Box>
 
 
@@ -99,6 +119,7 @@ export default function Sidebar({ open, setOpen }) {
                 <Drawer
                     anchor="top"
                     open={open}
+
 
 
                     onClose={toggleDrawer(false)}

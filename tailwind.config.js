@@ -8,15 +8,20 @@ module.exports = {
     fontFamily: {
       sans: ["Inter", "sans-serif"],
       jost: ["Jost", "sans-serif"],
-      quest: ["Questrial", "sans-serif"],
-      faito: ["Faito", "sans-serif"],
-      outfit: ["Outfit", "sans-serif"],
       quicksand: ["Quicksand", "sans-serif"],
+      aleg: ["Alegreya", "sans-serisf"],
+    },
+    screens: {
+      phone: { min: "100px", max: "400px" },
+      llg: "1350px",
+      xs: "0px",
+      sm: "600px",
+      md: "900px",
+      lg: "1200px",
+      xl: "1536px",
+      "2xl": "1536px",
     },
   },
-  screens: {
-    phone: { min: "100px", max: "400px" },
-    llg: "1350px",
-  },
+
   plugins: [require("@tailwindcss/typography")],
 };

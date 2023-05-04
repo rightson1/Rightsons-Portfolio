@@ -11,21 +11,26 @@ const Services = () => {
         </div>
 
         <Grid container className="py-10 px-5 md:px-20" rowSpacing={5}>
-            <Grid item md={3} xs={12} className="flex justify-center md:justify-start   md:min-h-[50vh] ">
-                <Typography className="text-center font-jost text-4xl md:text-[60px]  font-[500] md:-rotate-[90deg]  tracking-[2px] md:leading-[4rem]">
-                    Services I <br className="hidden md:block" />
-                    Provide
+            <Grid item md={3} xs={12} className="flex  " sx={{
+                minHeight: { xs: undefined, md: "50vh" },
+                justifyContent: { xs: "center", md: "start" }
+            }}>
+                <Typography className="text-center font-aleg text-4xl sm:text-[3rem] md:text-[3.5rem]  md:text- font-[500]  tracking-[2px] md:leading-[4rem] overflow-hidden" sx={{
+                    transform: { xs: "rotate(0deg)", md: "rotate(-90deg)" },
+                }}>
+                    Services & <br className="hidden md:block" />
+                    Education
                 </Typography>
             </Grid>
             <Grid item md={3} xs={12} className="flex items-center  flex-col">
                 <img src="/code.gif" alt="" className="w-[70px]" />
-                <Typography className="text-center font-jost text-[30px] text-[700]">
+                <Typography className="text-center font-jost text-2xl text-[700]">
                     Development
                 </Typography>
                 <div className="flex py-5 flex-col gap-4">
                     {
                         coding.map((item, index) => (
-                            <Typography key={index} className="text-center font-jost text-[16px] text-[500]">
+                            <Typography key={index} className="text-center font-jost text-[1rem] text-[500] ">
                                 {item}
                             </Typography>
                         ))
@@ -34,13 +39,13 @@ const Services = () => {
             </Grid>
             <Grid item md={3} xs={12} className="flex items-center  flex-col">
                 <img src="/play.gif" alt="" className="w-[70px]" />
-                <Typography className="text-center font-jost text-[30px] text-[700]">
+                <Typography className="text-center font-jost text-2xl text-[700]">
                     Skills
                 </Typography>
                 <div className="flex py-5 flex-col gap-4">
                     {
                         skills.map((item, index) => (
-                            <Typography key={index} className="text-center font-jost text-[16px] text-[500]">
+                            <Typography key={index} className="text-center font-jost text-[1rem] text-[500]">
                                 {item}
                             </Typography>
                         ))
@@ -49,13 +54,13 @@ const Services = () => {
             </Grid>
             <Grid item md={3} xs={12} className="flex items-center  flex-col">
                 <img src="/education.gif" alt="" className="w-[70px]" />
-                <Typography className="text-center font-jost text-[30px] text-[700]">
+                <Typography className="text-center font-jost text-2xl text-[700]">
                     School And Certificates
                 </Typography>
                 <div className="flex py-5 flex-col gap-4">
                     {
                         school.map((item, index) => (
-                            <Typography key={index} className="text-center font-jost text-[16px] text-[500]">
+                            <Typography key={index} className="text-center font-jost text-[1rem] text-[500]">
                                 {item}
                             </Typography>
                         ))
@@ -63,7 +68,7 @@ const Services = () => {
                 </div>
             </Grid>
         </Grid>
-    </Box>;
+    </Box >;
 };
 const coding = [
     "Frontend (React js)",

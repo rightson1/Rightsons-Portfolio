@@ -4,13 +4,11 @@ import { useGlobalProvider } from "../utils/themeContext";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Meeting from "../components/Meeting";
-import Projects from "../components/Projects";
-import Blogs from "../components/Blogs";
 import Chat from "../components/Chat";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
 import About from "../components/About";
-const Index = () => {
+import Blogs from "../components/Blogs"
+import { client } from "../utils/client";
+const Index = ({ posts }) => {
   const { colors } = useGlobalProvider();
 
   return (
@@ -18,16 +16,22 @@ const Index = () => {
       <Hero />
       <Services />
       <Meeting />
-      <Chat />
+      <Blogs {...{ posts }} />
+      {/* <Chat /> */}
       <About />
-      {/* <Projects /> */}
-      {/* <Blogs /> */}
-      {/* <div className="h-[1px] w-screem bg-black my-5 opacity-50"></div> */}
-      {/* <Contact /> */}
     </Box>
   )
 
 };
-Index.homepage = true;
+export const getStaticProps = async () => {
+  const response = await client.getEntries({ content_type: 'blogs' })
 
+  return {
+    props: {
+      posts: response.items,
+      revalidate: 60
+    },
+    revalidate: 60
+  }
+}
 export default Index;

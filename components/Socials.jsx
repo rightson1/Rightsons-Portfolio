@@ -5,6 +5,9 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
 import { IoLogoWhatsapp } from "react-icons/io";
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Box from "@mui/material/Box"
+import { useGlobalProvider } from "../utils/themeContext";
+const MotionBox = motion(Box)
 const Socials = () => {
 
     return <div className="flex gap-4">
@@ -26,5 +29,35 @@ const Socials = () => {
     </div>
 
 };
+export const ColoredSocials = () => {
+    const { colors } = useGlobalProvider();
+    return <div className="flex gap-4 sm:py-10">
+        <MotionBox className=" cursor-pointer p-2 flex items-center justify-center rounded-lg"
+            sx={{
+                bgcolor: "#3e65cf"
+
+            }}
+            whileHover={{ scale: 1.1 }}
+        >
+            <EmailIcon className='text-white' />
+        </MotionBox>
+        <MotionBox sx={{
+            bgcolor: colors.blueish[500]
+        }} className=" cursor-pointer p-2 flex items-center justify-center rounded-lg"
+            whileHover={{ scale: 1.1 }}
+        >
+            <GitHubIcon className='text-white' />
+        </MotionBox>
+        <MotionBox sx={{
+            bgcolor: "#25D366"
+        }}
+            className="cursor-pointer p-2 flex items-center justify-center rounded-lg"
+            whileHover={{ scale: 1.1 }}
+        >
+            <WhatsAppIcon className='text-white' />
+        </MotionBox>
+    </div>
+
+}
 
 export default Socials;

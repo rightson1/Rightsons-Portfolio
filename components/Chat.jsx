@@ -1,15 +1,15 @@
-import { Box, Button, Collapse, Grid, IconButton, Typography } from "@mui/material";
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
+import { Box, Button, CircularProgress, Collapse, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
-import SendIcon from '@mui/icons-material/Send';
 import { useGlobalProvider } from "../utils/themeContext";
 import axios from "axios";
 import { useRef } from "react";
 import { useEffect } from "react";
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import { motion } from "framer-motion";
+import Fun from "./Fun";
+import Avatar from "@mui/material/Avatar";
+import { ColoredSocials } from "./Socials";
 
 
 const Chat = () => {
@@ -19,14 +19,16 @@ const Chat = () => {
     const [foodRes, setFoodRes] = useState(null)
     const [messages, setMessages] = useState([])
     const [last, setLast] = useState(null)
-    const [mic, setMic] = useState(false)
+    const [paddding, setPaddding] = useState(0)
     const [loading, setLoading] = useState(false)
 
     const submit = (e) => {
-        setLoading(true)
         e.preventDefault(0);
+        if (!text) return;
+        setLoading(true)
+
         const data = [{ text, own: true }]
-        axios.post('/api/nlp', { name: text || transcript }).then((res) => {
+        axios.post('/api/nlp', { name: text }).then((res) => {
             data.push({ text: res.data.answer, own: false, doubts: res.data.doubts })
             setLast(res.data.answer)
             setMessages([...messages, ...data]);
@@ -39,7 +41,6 @@ const Chat = () => {
         e.target.reset();
     }
     const chatWindowRef = useRef();
-    const [open, setOpen] = React.useState(false);
     useEffect(() => {
         if (chatWindowRef.current) {
             chatWindowRef.current.scrollTop = chatWindowRef.current.scrollHeight;
@@ -59,47 +60,16 @@ const Chat = () => {
 
     }
     const MotionBox = motion(Box)
-    return <Grid container className="p-5 " spacing={3}>
-        <Grid item xs={12} md={6} className=" gap-2 items-center  "
-            display={display('md')}
+    return <Grid container className="" spacing={3}>
 
-        >
+        <Grid item xs={12} md={6} className="">
 
-            {/* <Box className="flex justify-center md:justify-center items-center">
-                <Typography className="text-center font-jost text-4xl md:text-[60px]  font-[500] md:-rotate-[90deg]  tracking-[2px] md:leading-[4rem]">
-                    Talk To <br className="hidden md:block" />
-                    Rightson
-                </Typography>
-            </Box> */}
-            <img src="/person.gif" alt="" className="h-[250px]" />
-            <Box className="flex items-center  flex-col h-[50vh]">
-                <Typography className="text-center font-jost text-[30px] text-[700]">
-                    Sample Question
-                </Typography>
-                <div className="flex py-5 flex-col gap-4">
-                    {
-                        sample.map((item, index) => (
-                            <Typography className="text-center font-jost text-[16px] text-[500]" key={index}>
-                                {item}
-                            </Typography>
-                        ))
-                    }
-                </div>
-
-            </Box>
-
-        </Grid>
-
-
-        <Grid item xs={12} md={6}>
-
-            {/* <Typography className="font-outfit font-[500] text-4xl md:text-[50px]  text-center md:text-start  text-black gap-4">
-                Let’s Have a <span className="te"> Chat </span>
-            </Typography> */}
             <Box >
-                <Box className="flex flex-col  h-[70vh] p-1 " >
+                <Box className="flex flex-col  h-[70vh] " >
                     {
-                        messages.length > 0 ? <div className="h-full flex flex-col overflow-auto gap-2" ref={chatWindowRef}>
+                        messages.length > 0 ? <Box className="h-full flex flex-col overflow-auto gap-2 pt-2 pb-8 p-3" ref={chatWindowRef}
+
+                        >
                             {
                                 messages.map((item, index) => {
                                     return <Box key={index} sx={{
@@ -115,23 +85,31 @@ const Chat = () => {
                                     </Box>
                                 })
                             }
-                        </div> :
-                            <Box className="h-full flex justify-center flex-col items-center ">
-                                <img src="/hello.gif" alt="" className="w-[300px] w-full " />
-                                <Typography className=" w-full text-center " variant="h6" fontFamily="Questrial" >
-                                    Wanna know anything about me? Ask RightGPT
+                        </Box> :
+                            <Box className=" flex justify-center flex-col items-center h-3/4">
+                                <img src="/hello.gif" alt="" className=" w-full md:w-[300px] overflow-hidden" />
+                                <Typography className=" w-full text-center  text-aleg text-xl pb-10" variant="h6" fontFamily="Questrial" >
+                                    E,g. What are your skills?
                                 </Typography>
                             </Box>
 
                     }
-                    <Box className="flex  gap-2  mt-10 shadow-lg p-2 rounded-md" component="form" onSubmit={submit}>
+                    <Box className="flex  gap-2   shadow-lg rounded-md bg-white  py-3 mb-5 px-4 border-[1px] border-[rgba(0,0,0,.1)]" component="form" onSubmit={submit}>
                         <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Ask me anything , e.g what are your skills " id="name" className="rounded-md p-2 outline-none w-full " />
                         <Button type="submit" className="text-white text-xl text">
-                            {loading ? '....' : "Send"}
+                            {loading ? <CircularProgress className="text-black" />
+                                : "Send"}
                         </Button>
                     </Box>
                 </Box>
             </Box>
+        </Grid>
+        <Grid item xs={12} md={6} className="flex-col items-center gap-3" sx={
+            {
+                display: display('ms')
+            }
+        }>
+
         </Grid>
     </Grid>
 };

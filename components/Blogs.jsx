@@ -2,32 +2,55 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Typography, Box, Grid, Button } from "@mui/material";
+import Pagination from '@mui/material/Pagination';
 import { useGlobalProvider } from "../utils/themeContext";
-const Blogs = () => {
+import Link from "next/link";
+const Blogs = ({ posts }) => {
     const TypoAnimate = motion(Typography)
     const { colors } = useGlobalProvider();
+    const [page, setPage] = useState(1);
+    const [blogsPerPage, setBlogsPerPage] = useState(3);
+    const totalBlogs = posts?.length;
+
+    useEffect(() => {
+        setPage(1);
+    }, [posts]);
+
+    const handlePageChange = (event, value) => {
+        setPage(value);
+    };
+
+    const startIndex = (page - 1) * blogsPerPage;
+    const endIndex = startIndex + blogsPerPage;
+    const displayedPosts = posts?.slice(startIndex, endIndex);
 
     const Single = ({ project }) => {
-        return <Grid item xs={12} md={4} className="flex justify-center flex-col">
-            <Box className="flex justify-center  relative ">
-                <Typography className="absolute top-1/2  font-jost blog font-[600] text-[30px] px-10 text-center -translate-y-1/2">
-                    {project.description}
-                </Typography>
-                <img src={project.img} alt="hfoods" className="w-full h-[350px] md:h-[250px]" />
-            </Box>
+        const { fields: { title, slug, featuredImage: { fields: { file: { url } } }, description } } = project
+
+        return <Grid item xs={12} md={4} className="cursor-pointer">
+            <Link href={`/blog/${slug}`}>
+                <Box className="flex justify-center  relative ">
+                    <img src={url} alt="hfoods" className="w-full h-[300px] sm:h-[350px] md:h-[250px] object-cover" />
+                </Box>
+            </Link>
             <Box className="flex flex-col   py-5">
-                <Typography variant="h2" className="font-[500]  text-start font-jost text-2xl" sx={{
+                <Typography variant="h2" className="font-[500]  text-start font-jost text-2xl " sx={{
                     color: colors.blueish[500]
 
                 }}>
-                    {project.title}
+                    {title}
                 </Typography>
 
             </Box>
+            {/* <Box
+                className="absolute top-0 left-0 w-full z-[1] h-full object-cover bg-[rgba(0,0,0,1)]"
+
+            /> */}
         </Grid>
+
     }
-    return <Box className="w-full flex  px-5 py-20 md:py-20 flex-col">
-        <TypoAnimate variant="h2" className="font-[600]  text-center font-quicksand pb-10 blogTitle text-4xl md:text-[50px]"
+    return <Box className="w-full flex  py-20 md:py-20 flex-col">
+        <TypoAnimate variant="h2" className="font-[600]  text-center font-aleg pb-10 blogTitle text-4xl sm:text-[3.1rem]"
             initial={{
                 scale: 0,
             }}
@@ -39,33 +62,38 @@ const Blogs = () => {
         </TypoAnimate>
 
 
-        <Grid container className="py-5" spacing={5}>
+        <Grid container className="py-5  px-5 overflow-hidden" spacing={5}>
             {
-                blogs.map((project, index) => (
+                displayedPosts.map((project, index) => (
                     <Single key={index} {...{ project, index }} />
                 ))
 
             }
         </Grid>
-
-
+        <div className="flex w-full  justify-center">
+            <Pagination
+                count={Math.ceil(totalBlogs / blogsPerPage)}
+                page={page}
+                onChange={handlePageChange}
+            />
+        </div>
     </Box>;
 };
 const blogs = [
     {
-        title: "My Coding Journey",
+        title: "My Tech Journey",
         description: "A food delivery app that allows users to order food from ",
-        img: "/blog.png"
+        img: "/minutes.png"
     },
     {
         title: "Rightson Tole",
         description: "A voting website that allows users to vote for",
-        img: "/blog.png"
+        img: "/art.png"
     },
     {
-        title: "About Riara University",
+        title: "About School Life",
         description: "A voting website that allows users to vote for.",
-        img: "/blog.png"
+        img: "/school.png"
     }
 
 ]

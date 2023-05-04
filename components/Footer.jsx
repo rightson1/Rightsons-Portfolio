@@ -9,26 +9,23 @@ const Footer = () => {
         <Grid container className="p-5" spacing={5}>
             <Grid item xs={12} md={6} className="flex flex-col justify-start md:items-start items-center gap-2">
 
-                <Box sx={{
-                    flexGrow: {
-                        xs: 1,
-                        md: 0,
-                    }
-                }} className="flex items-center gap-2">
 
 
-                    <Box className='flex gap-2 items-center mt-2 '>
-                        <Typography fontFamily={"faito"} className='text-2xl md:text-3xl font-[500]'>
+                <Box className="flex items-center gap-2 cursor-pointer w-full  justify-center md:justify-start">
+
+
+                    <Box className='flex gap-2 items-center'>
+                        <Typography fontFamily={"Alegreya"} className='text-3xl  md:text-4xl  font-[400]'>
                             Chari
                         </Typography>
-                        <Typography fontFamily={"faito"} className='text-3xl md:text-4xl '>
+                        <Typography fontFamily={"Alegreya"} className='text-3xl  md:text-4xl  font-[500]'>
                             Rightson
                         </Typography>
                     </Box>
-
-
                 </Box>
-                <Typography className="font-jost text-[19px] text-start opacity-70">
+
+
+                <Typography className="font-jost text-[19px] text-center md:text-start opacity-70 ">
                     Combining my passion for design and development with my education, I bring creativity and technical skills to crafting digital experiences for web and mobile platforms.
                 </Typography>
             </Grid>
@@ -61,7 +58,7 @@ const Footer = () => {
                 <Typography className="font-quicksand text-[30px] text-start font-[600]">
                     Information
                 </Typography>
-                <Typography className="font-jost text-[19px] text-start opacity-70">
+                <Typography className="font-jost text-[19px] text-center opacity-70  md:text-start">
                     Mixing simplicity and elegance to create user-centric designs.
                 </Typography>
 
@@ -71,10 +68,10 @@ const Footer = () => {
         <div className="h-[1px] w-screem bg-black my-5 opacity-50"></div>
         <div className="flex justify-center items-center">
             <Typography className="font-jost text-[19px] text-start opacity-70">
-                © 2021 Chari Rightson. All rights reserved.
+                © 2023 Chari Rightson. All rights reserved.
             </Typography>
         </div>
-    </Box>
+    </Box >
 };
 
 export default Footer;

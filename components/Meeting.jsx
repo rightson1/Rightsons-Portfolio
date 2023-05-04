@@ -17,11 +17,11 @@ const Meeting = () => {
         };
     }, []);
     return <Box className="w-full  bg-black py-20 flex flex-col justify-center items-center gap-8 md:gap-[50px]  px-[10px]">
-        <Typography className="font-outfit font-[500] text-4xl md:text-[70px]  text-center  text-white">
+        <Typography className="font-aleg font-[500] text-4xl sm:text-[3rem] md:text-[4.5rem] xl:text-[5rem] text-center  text-white md:leading-[5rem] ">
             Let’s set a <span className="text"> meeting </span>
             with calendly
         </Typography>
-        <Typography className="font-jost text-2xl md:text-3xl text-center md:text-start text-white ">
+        <Typography className="font-jost text-2xl md:text-3xl xl:text-[3rem] text-center md:text-start text-white ">
             You are one step away from growing your business!
         </Typography>
         <div className="flex col flex-col md:flex-row items-center gap-2 md:gap-8">
