@@ -68,17 +68,17 @@ const Services = () => {
                 </div>
             </Grid>
         </Grid>
-    </Box >;
+    </Box>;
 };
 const coding = [
     "Frontend (React js)",
     "Backend (Node js,PHP)",
     "Database (MongoDB,Firebase)",
     "Full Stack (Next js)",
-    "CMS (Wordpress,contentful)",
+    "CMS (Wordpress,Contentful)",
 ]
 const skills = [
-    "Mobile Development (PWA)",
+    "Mobile App Development",
     "Web Development",
     "UI/UX Design",
     "Ecommerce",

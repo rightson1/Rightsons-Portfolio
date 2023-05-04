@@ -4,7 +4,7 @@ import { useGlobalProvider } from "../utils/themeContext";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Meeting from "../components/Meeting";
-import Chat from "../components/Chat";
+
 import About from "../components/About";
 import Blogs from "../components/Blogs"
 import { client } from "../utils/client";
@@ -24,14 +24,23 @@ const Index = ({ posts }) => {
 
 };
 export const getStaticProps = async () => {
-  const response = await client.getEntries({ content_type: 'blogs' })
-
-  return {
-    props: {
-      posts: response.items,
+  try {
+    const response = await client.getEntries({ content_type: 'blogs' })
+    return {
+      props: {
+        posts: response.items,
+        revalidate: 60
+      },
       revalidate: 60
-    },
-    revalidate: 60
+    }
+  } catch (e) {
+    return {
+      props: {
+        posts: [],
+        revalidate: 60
+      },
+      revalidate: 60
+    }
   }
 }
 export default Index;

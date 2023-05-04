@@ -22,24 +22,24 @@ const Hero = () => {
                     Crafting visually appealing digital experiences
                 </Typography>
                 <Typography className="font-jost text-xl text-start xl:text-4xl ">
-                    Combining my passion for design and development with my education, I bring creativity and technical skills to crafting digital experiences for web and mobile platforms.
+                    Combining my passion for design and development with hardwork, I bring creativity and technical skills to crafting digital experiences for web and mobile platforms.
                 </Typography>
                 <div className="flex gap-4">
-                    <motion.div className="bg-black cursor-pointer p-3 flex items-center justify-center rounded-lg"
+                    <MotionBox component="a" href="mailto:chari.rightson@gmail.com" target='="_blank' className="bg-black cursor-pointer p-3 flex items-center justify-center rounded-lg"
                         whileHover={{ scale: 1.1 }}
                     >
                         <EmailIcon className='text-white' />
-                    </motion.div>
-                    <motion.div className="bg-black cursor-pointer p-3 flex items-center justify-center rounded-lg"
+                    </MotionBox>
+                    <MotionBox component="a" href="https://github.com/rightson1" target='="_blank' className="bg-black cursor-pointer p-3 flex items-center justify-center rounded-lg"
                         whileHover={{ scale: 1.1 }}
                     >
                         <GitHubIcon className='text-white' />
-                    </motion.div>
-                    <motion.div className="bg-black cursor-pointer p-3 flex items-center justify-center rounded-lg"
+                    </MotionBox>
+                    <MotionBox component="a" href="https://api.whatsapp.com/send?phone=0791568168" target='="_blank' className="bg-black cursor-pointer p-3 flex items-center justify-center rounded-lg"
                         whileHover={{ scale: 1.1 }}
                     >
                         <WhatsAppIcon className='text-white' />
-                    </motion.div>
+                    </MotionBox>
                 </div>
             </Grid>
             <Grid item xs={12} md={5} className=" py-10 md:p-20 flex justify-center items-center overflow-hidden">

@@ -9,6 +9,7 @@
   display: inline-block;
   text-decoration: none;
   font-family: "Jost";
+  z-index: 10000 !important;
   border-radius: 10px;
 }
 .btn-flip:hover:after {
@@ -20,7 +21,7 @@
   transform: translateY(50%) rotateX(90deg);
 }
 .btn-flip:after {
-  top: 0;
+  top: 100px;
   left: 0;
   opacity: 0;
   width: 100%;
@@ -29,12 +30,13 @@
   transition: 0.5s;
   position: absolute;
   background: black;
+  z-index: 10000 !important;
   content: attr(data-back);
   border-radius: 10px;
   transform: translateY(-50%) rotateX(90deg);
 }
 .btn-flip:before {
-  top: 0;
+  top: 100px;
   left: 0;
   opacity: 1;
   color: black;
@@ -47,4 +49,16 @@
   background: white;
   content: attr(data-front);
   transform: translateY(0) rotateX(0);
+  z-index: 10000 !important;
+}
+.top {
+  border-radius: 50% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  z-index: 10000 !important;
+  position: fixed;
+  bottom: 30px !important;
+  right: 20px !important;
 }

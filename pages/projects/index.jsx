@@ -6,6 +6,7 @@ import Link from "next/link";
 import About from "../../components/About"
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import { client } from "../../utils/client"
+import Title from "../../components/Title";
 const Projects = ({ posts }) => {
     const { colors } = useGlobalProvider();
     const [page, setPage] = useState(1);
@@ -26,7 +27,7 @@ const Projects = ({ posts }) => {
     const Single = ({ project }) => {
         const { fields: { title, slug, featuredImage: { fields: { file: { url } } }, description } } = project
         return <Grid item xs={12} md={4} className="cursor-pointer">
-
+            <Title title="Projects Page" content=" Rightson Tole projects made using  Mongo db, React, Node.js, Next.js, Firebase, WordPress, and PHP" />
             <Box className="flex justify-center  relative ">
                 <img src={url} alt="hfoods" className="w-full h-[300px] sm:h-[350px] md:h-[250px] object-cover" />
                 <Box
@@ -34,7 +35,7 @@ const Projects = ({ posts }) => {
 
                 />
             </Box>
-            <Box className="flex  items-center justify-between   py-5 ">
+            <Box className="flex  gap-2 md:items-center md:justify-between   py-5  flex-col md:flex-row">
                 <Typography variant="h2" className="font-[500]  text-start font-jost text-2xl " sx={{
                     color: colors.blueish[500]
 
@@ -42,7 +43,7 @@ const Projects = ({ posts }) => {
                     {title}
                 </Typography>
                 <Link href={`/projects/${slug}`}>
-                    <a className="flex items-center justify-center self-start">
+                    <a className="flex items-center justify-center self-start ">
                         <Typography variant="h1" fontFamily="Questrial" className=" text-black font-jost text-xl" >
                             Read More
                         </Typography>

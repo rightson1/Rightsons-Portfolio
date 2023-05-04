@@ -4,12 +4,14 @@ import { ColoredSocials } from "../../components/Socials";
 import { client } from "../../utils/client";
 import { format } from "timeago.js";
 import RichText from "../../components/RichText";
+import Title from "../../components/Title";
 
 const Blog = ({ post }) => {
     if (!post) return <div>loading...</div>
     const { title, description, featuredImage: { fields: { file: { url } } }, content, date } = post.fields
 
     return <Box className="py-10 ">
+        <Title title={title} description={"Rightson Tole"} />
         <div className="flex flex-col px-5 py-5 gap-5">
             <Typography className="text-center md:text-start  font-[500] text-[40px] md:text-4xl  " fontFamily="Alegreya">
                 Single Blog
@@ -60,7 +62,7 @@ const Blog = ({ post }) => {
                     {title}
                 </Typography>
                 <div className="py-10">
-                    <img src={url} className="h-[300px] w-full md:h-[400px] md:w-3/4" alt="" />
+                    <img src={url} className="h-[300px] w-full md:h-[400px] md:w-3/4 object-cover" alt="" />
                 </div>
                 <div className="flex flex-col gap-8 opacity-90">
                     <div className='max-w-none prose my-5'>
@@ -73,7 +75,7 @@ const Blog = ({ post }) => {
 
 
         </Grid>
-
+        <div className="h-[1px] w-screen bg-black my-5 opacity-30"></div>
     </Box>
 };
 

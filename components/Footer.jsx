@@ -26,29 +26,33 @@ const Footer = () => {
 
 
                 <Typography className="font-jost text-[19px] text-center md:text-start opacity-70 ">
-                    Combining my passion for design and development with my education, I bring creativity and technical skills to crafting digital experiences for web and mobile platforms.
+                    Thank you for taking the time to visit my portfolio.
+                    If you have any questions or inquiries, please
+                    feel free to fill out the contact in Contact page. I would
+                    love to hear from you and discuss potential
+                    opportunities to collaborate on exciting projects.
                 </Typography>
             </Grid>
             <Grid item xs={12} md={3} className="flex flex-col justify-center items-center md:items-start gap-2">
                 <Typography className="font-quicksand text-[30px] text-start font-[600]">
                     Important Links
                 </Typography>
-                <Link href="/home">
+                <Link href="/">
                     <Button className='font-jost font-[400] opacity-70 text-[18px] text-black capitalize'>
                         Home
                     </Button>
                 </Link>
-                <Link href="/home">
+                <Link href="/projects">
                     <Button className='font-jost font-[400] opacity-70 text-[18px] text-black capitalize'>
                         Projects
                     </Button>
                 </Link>
-                <Link href="/home">
+                <Link href="/about">
                     <Button className='font-jost font-[400] opacity-70 text-[18px] text-black capitalize'>
                         About
                     </Button>
                 </Link>
-                <Link href="/home">
+                <Link href="/contact">
                     <Button className='font-jost font-[400] opacity-70 text-[18px] text-black capitalize'>
                         Contact
                     </Button>

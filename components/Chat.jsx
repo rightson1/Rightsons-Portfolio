@@ -7,9 +7,6 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import { motion } from "framer-motion";
-import Fun from "./Fun";
-import Avatar from "@mui/material/Avatar";
-import { ColoredSocials } from "./Socials";
 
 
 const Chat = () => {

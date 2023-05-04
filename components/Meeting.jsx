@@ -25,7 +25,7 @@ const Meeting = () => {
             You are one step away from growing your business!
         </Typography>
         <div className="flex col flex-col md:flex-row items-center gap-2 md:gap-8">
-            <Button href="https://calendly.com/rightson-tole/30min" className="text-black rouded-lg p-2 px-3 md:py-3 md:px-4 font-jost text-xl bg-white hover:bg-black hover:text-white ">
+            <Button target="_blank" href="https://calendly.com/rightson-tole/30min" className="text-black rouded-lg p-2 px-3 md:py-3 md:px-4 font-jost text-xl bg-white hover:bg-black hover:text-white ">
                 Click For Schedule
             </Button>
             <Typography className="font-outfit font-[500] text-4xl  my-5 text-center  text-white">

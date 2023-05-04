@@ -80,17 +80,17 @@ function Navbar({ homepage }) {
         )
     }
     return (
-        <AppBar className=' shadow-none relative  flex justify-center items-center border-b-[1px] border-black'
+        <AppBar className=' shadow-none relative  flex justify-center items-center border-b-[1px] border-black z-[5]'
             sx={{
                 backgroundColor: 'white',
                 color: 'black',
                 height: { xs: "80px", sm: "100px", md: '80px' }
             }}
         >
-            <Container maxWidth="xl" className='bg-transparent '
+            <Container maxWidth="xl" className='bg-transparent  z-[5]'
 
             >
-                <Toolbar disableGutters className='justify-between items-center'
+                <Toolbar disableGutters className='justify-between items-center z-[5]'
                 >
                     <Link href={"/"}>
                         <Box sx={{
@@ -119,7 +119,7 @@ function Navbar({ homepage }) {
                     <Box className="justify-center items-center gap-3" sx={{
                         display: display('md'),
                     }}>
-                        <Box className="bg-black p-2 flex items-center justify-center rounded-lg">
+                        <Box className="bg-black p-2 flex items-center justify-center rounded-lg" component="a" href="mailto:chari.rightson@gmail.com" target='="_blank'>
                             <EmailIcon className='text-white' />
                         </Box>
                         <Typography className='text-[18px]  font-jost font-[600]' >

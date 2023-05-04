@@ -14,6 +14,10 @@ export default function Sidebar({ open, setOpen }) {
     const { colors } = useGlobalProvider()
 
     const router = useRouter()
+    const { pathname } = router;
+    React.useEffect(() => {
+        setOpen(false)
+    }, [pathname])
 
     const toggleDrawer = (click) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {

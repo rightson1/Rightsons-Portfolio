@@ -27,7 +27,7 @@ const Blogs = ({ posts }) => {
     const Single = ({ project }) => {
         const { fields: { title, slug, featuredImage: { fields: { file: { url } } }, description } } = project
 
-        return <Grid item xs={12} md={4} className="cursor-pointer">
+        return <Grid item xs={12} md={4} className="md:cursor-pointer">
             <Link href={`/blog/${slug}`}>
                 <Box className="flex justify-center  relative ">
                     <img src={url} alt="hfoods" className="w-full h-[300px] sm:h-[350px] md:h-[250px] object-cover" />
@@ -62,7 +62,7 @@ const Blogs = ({ posts }) => {
         </TypoAnimate>
 
 
-        <Grid container className="py-5  px-5 overflow-hidden" spacing={5}>
+        <Grid container className="py-5  px-5 overflow-hidden " spacing={5}>
             {
                 displayedPosts.map((project, index) => (
                     <Single key={index} {...{ project, index }} />

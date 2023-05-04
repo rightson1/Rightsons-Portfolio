@@ -22,14 +22,18 @@ const About = () => {
                 </Typography>
                 <div className="flex flex-col gap-8 opacity-90">
                     <Typography className="font-jost text-xl text-center text-white ">
-                        Combining my passion for design and development with my education, I bring creativity and technical skills to crafting digital experiences for web and mobile platforms.
+                        Kenyan web developer living in Nairobi, Am passionate about using technology to make a positive impact on the world. With expertise in Mongo db, React, Node.js, Next.js, Firebase, WordPress, and PHP, I am committed to developing innovative solutions that meet the needs of today's ever-changing digital landscape.
                     </Typography>
                     <Typography className="font-jost text-xl text-center text-white ">
-                        Combining my passion for design and development with my education, I bring creativity and technical skills to crafting digital experiences for web and mobile platforms.
+                        Am in second-year  at Riara University, I am constantly seeking out new challenges and opportunities to grow my skills as a developer.
                     </Typography>
                     <Typography className="font-jost text-xl text-center text-white ">
-                        Combining my passion for design and development with my education, I bring creativity and technical skills to crafting digital experiences for web and mobile platforms.
+                        Beyond my technical skills, I am an avid reader, music lover,
+                        and 3D modeling enthusiast.  With a passion for innovation
+                        and a commitment to excellence, I am excited to continue my
+                        journey as a web developer and make a positive impact on the world.
                     </Typography>
+
                 </div>
                 <div className="flex justify-center py-10">
                     <Socials />
@@ -39,7 +43,7 @@ const About = () => {
                 <Typography className="text-4xl sm:text-[3rem] md:text-[3.8rem] xl:text-[5rem] text-center font-aleg text-white py-10 font-[600] md:pb-20">
                     About Me
                 </Typography>
-                <SingleAbout title="256 +" description="Projects Complete" />
+                <SingleAbout title="10 +" description="Projects Complete" />
                 <SingleAbout title="3 +" description="Years of Experience" />
                 <SingleAbout title="10 +" description="Technology Skills" />
 
