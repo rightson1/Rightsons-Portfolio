@@ -19,13 +19,7 @@ export default function Sidebar({ open, setOpen }) {
         setOpen(false)
     }, [pathname])
 
-    const toggleDrawer = (click) => (event) => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-            return;
-        }
 
-        setOpen(click);
-    };
     const MotionBox = motion(Box)
 
     const list = () => (
@@ -35,9 +29,7 @@ export default function Sidebar({ open, setOpen }) {
                 pb: 5,
             }}
             role="presentation"
-            onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}
-
+            onClick={() => setOpen(false)}
         >
             <Button className='sm:py-5'>
                 <img src="/close.png" alt="" className='w-[35px]' />
@@ -120,16 +112,27 @@ export default function Sidebar({ open, setOpen }) {
         <div>
 
             <React.Fragment >
-                <Drawer
-                    anchor="top"
-                    open={open}
+
+                {
+                    open && <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <Drawer
+                            onClose={() => setOpen(false)}
+                            anchor="top"
+                            className='bg-[rgba(0,0,0,0.5)]]'
+                            open={open}
+                        >
+                            {list()}
+                        </Drawer>
+                    </motion.div>
+
+                }
 
 
-
-                    onClose={toggleDrawer(false)}
-                >
-                    {list()}
-                </Drawer>
             </React.Fragment>
 
         </div>
