@@ -62,7 +62,7 @@ const Blog = ({ post }) => {
                     {title}
                 </Typography>
                 <div className="py-10">
-                    <img src={url} className="h-[300px] w-full md:h-[400px] md:w-3/4 object-cover" alt="" />
+                    <img src={url} className="h-[300px] w-full md:h-[400px] md:w-3/4 object-cover " alt="" />
                 </div>
                 <div className="flex flex-col gap-8 opacity-90">
                     <div className='max-w-none prose my-5'>
