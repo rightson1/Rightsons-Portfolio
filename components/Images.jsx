@@ -37,7 +37,7 @@ const Images = ({ images }) => {
         </Typography>
 
 
-        <Grid container className="py-5   md:px-5 overflow-hidden " spacing={1}>
+        <Grid container className="py-5   md:px-5 overflow-hidden " spacing={3}>
             {
                 displayedItems.map((image, index) => (
                     <Single key={index} {...{ image, index }} />
@@ -45,19 +45,23 @@ const Images = ({ images }) => {
 
             }
         </Grid>
+        <Typography className="text-center my-5 font-aleg flex justify-center hidden md:flex">
+            Click Image to view in full screen
+        </Typography>
         <Modal
-            className='w-full h-full flex justify-center items-center p-10 md:p-[100px]  z-[8]'
+            className="w-full h-full flex justify-center items-center md:p-[100px] z-[6]"
             open={!!open}
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
             sx={{
-                bgcolor: 'rgba(0,0,0,0.5)',
+                bgcolor: 'rgba(0,0,0,0.8)',
                 "& .swiper-pagination-bullet": {
                     backgroundColor: "white !important",
                 }
             }}
         >
+            {/* 
             <Swiper
                 modules={[Navigation, Pagination, A11y, Autoplay]}
                 autoplay={{
@@ -66,20 +70,15 @@ const Images = ({ images }) => {
                     disableOnInteraction: false
                 }}
                 slidesPerView={1}
-                pagination={{ clickable: true }}
+            // pagination={{ clickable: true }}
             >
                 {
                     images.map((item, index) => {
                         const { fields: { file: { url } } } = item;
                         return (
-                            <SwiperSlide key={index}>
+                            <SwiperSlide key={index} className="bg-red h-full w-full flex justify-center items-center bg-red-200">
 
-
-                                <Box component="img"
-                                    onClick={handleClose}
-                                    className='w-full h-full  '
-                                    src={open}
-                                    sx={{ width: '100%', height: '100%', }} />
+                 
 
                             </SwiperSlide>
                         )
@@ -87,12 +86,13 @@ const Images = ({ images }) => {
 
                     )
                 }
-            </Swiper>
+            </Swiper> */}
+            <img src={open} className="w-full h-full object-contain " alt="" />
 
 
         </Modal>
         {
-            open && <Button onClick={handleClose} className='fixed text-white top-0 right-5 cursor-pointer z-10' >
+            open && <Button onClick={handleClose} className='fixed text-white top-0 right-5 cursor-pointer z-10 ' >
                 <CloseIcon fontSize='large' />
             </Button>
         }
@@ -104,7 +104,7 @@ const Images = ({ images }) => {
             />
         </div>
 
-    </Box>;
+    </Box >;
 
 };
 

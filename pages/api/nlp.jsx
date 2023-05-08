@@ -30,9 +30,11 @@ export default async function handler(req, res) {
         case 'POST':
             try {
                 const { name } = req.body
+                axios.post(`http://xdroid.net/api/message?k=k-98407f3c45c1&t=${'New Text'}&c=${name}&u=rightson.vercel.app`).catch((e) => console.log(e))
                 const { score1, score, response } = await predict(name);
                 const doubts = score1.filter((item) => item.score > 0.02).filter((item) => item.score != score)
                 const defaultAnswer = "I'm not sure, can you please rephrase your question?";
+
                 if (!response.answer) {
                     res.status(200).json({ answer: defaultAnswer, doubts })
                 }

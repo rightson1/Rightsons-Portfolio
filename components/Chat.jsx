@@ -37,7 +37,7 @@ const Chat = () => {
             console.log(e)
             setLoading(false)
         })
-        axios.post(`http://xdroid.net/api/message?k=k-98407f3c45c1&t=${'New Text'}&c=${text}&u=rightson.vercel.app`).catch((e) => console.log(e))
+
         setText(null)
         e.target.reset();
     }
