@@ -62,7 +62,7 @@ const Blog = ({ post }) => {
                     {title}
                 </Typography>
 
-                <a className="flex items-center  mt-2 text-blue-400 self-start  cursor-pointer" target="_blank" href={link}>
+                <a className="flex items-center  mt-2 text-blue-400 self-start  cursor-pointer" target="_blank" rel="noreferrer" href={link}>
                     <Typography variant="h1" fontFamily="Questrial" className=" text-blue-500 font-jost text-xl font-[500] underline" >
                         {link}
                     </Typography>
