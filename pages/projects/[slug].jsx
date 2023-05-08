@@ -62,11 +62,11 @@ const Blog = ({ post }) => {
                     {title}
                 </Typography>
 
-                <a className="flex items-center  mt-2 text-blue-400 self-start  cursor-pointer" target="_blank" rel="noreferrer" href={link}>
-                    <Typography variant="h1" fontFamily="Questrial" className=" text-blue-500 font-jost text-xl font-[500] underline" >
+                <div className="flex items-center  mt-2 text-blue-400 self-start  cursor-pointer">
+                    <Typography component={"button"} target="_blank" href={link} variant="h1" fontFamily="Questrial" className=" text-blue-500 font-jost text-xl font-[500] underline" >
                         {link}
                     </Typography>
-                </a>
+                </div>
                 <div className="py-10">
                     <img src={url} className="h-[300px] w-full md:h-[400px] md:w-3/4 object-contain" alt="" />
                 </div>
