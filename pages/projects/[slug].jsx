@@ -63,7 +63,7 @@ const Blog = ({ post }) => {
                 </Typography>
 
                 <div className="flex items-center  mt-2 text-blue-400 self-start  cursor-pointer">
-                    <Typography component={"button"} target="_blank" href={link} variant="h1" fontFamily="Questrial" className=" text-blue-500 font-jost text-xl font-[500] underline" >
+                    <Typography component={"a"} target="_blank" href={link} variant="h1" fontFamily="Questrial" className=" text-blue-500 font-jost text-xl font-[500] underline" >
                         {link}
                     </Typography>
                 </div>
