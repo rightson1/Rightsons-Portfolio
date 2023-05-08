@@ -89,8 +89,11 @@ const Chat = () => {
                         </Box> :
                             <Box className=" flex justify-center flex-col items-center h-3/4">
                                 <img src="/hello.gif" alt="" className=" w-full md:w-[300px] overflow-hidden" />
-                                <Typography className=" w-full text-center  text-aleg text-xl pb-10" variant="h6" fontFamily="Questrial" >
+                                <Typography className=" w-full text-center  text-aleg text-xl " variant="h6" fontFamily="Questrial" >
                                     E,g. What are your skills?
+                                </Typography>
+                                <Typography className=" w-full text-center  text-aleg text-[13px] pb-10 italic" variant="h6" fontFamily="Questrial" >
+                                    First  response might take a few seconds
                                 </Typography>
                             </Box>
 
