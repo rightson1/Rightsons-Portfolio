@@ -1,6 +1,7 @@
 import { NlpManager } from "node-nlp";
 import { model } from "../../lib/nlpManager";
 import path from 'path'
+import axios from 'axios'
 const fs = require('fs/promises');
 
 // const manager = new NlpManager({ languages: ['en'] });
