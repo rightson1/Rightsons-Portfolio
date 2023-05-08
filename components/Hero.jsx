@@ -37,7 +37,7 @@ const Hero = () => {
                     >
                         <GitHubIcon className='text-white' />
                     </MotionBox>
-                    <MotionBox component="a" href="https://api.whatsapp.com/send?phone=0791568168" target='="_blank' className="bg-black cursor-pointer p-3 flex items-center justify-center rounded-lg"
+                    <MotionBox component="a" href="https://api.whatsapp.com/send?phone=254778749554" target='="_blank' className="bg-black cursor-pointer p-3 flex items-center justify-center rounded-lg"
                         whileHover={{ scale: 1.1 }}
                     >
                         <WhatsAppIcon className='text-white' />

@@ -20,7 +20,7 @@ const Socials = () => {
         >
             <GitHubIcon className='text-black' />
         </MotionBox>
-        <MotionBox component="a" href="https://api.whatsapp.com/send?phone=0791568168" target="_blank" className="bg-white w-[60px] h-[60px] cursor-pointer  flex items-center justify-center rounded-lg"
+        <MotionBox component="a" href="https://api.whatsapp.com/send?phone=254791568168" target="_blank" className="bg-white w-[60px] h-[60px] cursor-pointer  flex items-center justify-center rounded-lg"
             whileHover={{ scale: 1.1 }}
         >
             <IoLogoWhatsapp className='text-black text-xl' />
@@ -50,7 +50,7 @@ export const ColoredSocials = () => {
         </MotionBox>
         <MotionBox sx={{
             bgcolor: "#25D366"
-        }} component="a" href="https://api.whatsapp.com/send?phone=0791568168" target="_blank"
+        }} component="a" href="https://api.whatsapp.com/send?phone=254778749554" target="_blank"
             className="cursor-pointer p-2 flex items-center justify-center rounded-lg"
             whileHover={{ scale: 1.1 }}
         >

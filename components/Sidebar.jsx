@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import Typography from '@mui/material/Typography';
+import { ColoredSocials } from './Socials';
 export default function Sidebar({ open, setOpen }) {
     const { colors } = useGlobalProvider()
 
@@ -58,8 +59,8 @@ export default function Sidebar({ open, setOpen }) {
                     </Button>
                 </Link>
             </Box>
-            <div className="flex gap-4 sm:py-10">
-                <MotionBox className=" cursor-pointer p-2 flex items-center justify-center rounded-lg"
+            <div className="flex gap-4 ">
+                <MotionBox component="a" href="mailto:chari.rightson@gmail.com" target='_blank' className=" cursor-pointer p-2 flex items-center justify-center rounded-lg"
                     sx={{
                         bgcolor: "#3e65cf"
 
@@ -68,14 +69,14 @@ export default function Sidebar({ open, setOpen }) {
                 >
                     <EmailIcon className='text-white' />
                 </MotionBox>
-                <MotionBox sx={{
+                <MotionBox component="a" href="https://github.com/rightson1" target='_blank' sx={{
                     bgcolor: colors.blueish[500]
                 }} className=" cursor-pointer p-2 flex items-center justify-center rounded-lg"
                     whileHover={{ scale: 1.1 }}
                 >
                     <GitHubIcon className='text-white' />
                 </MotionBox>
-                <MotionBox sx={{
+                <MotionBox component="a" href="https://api.whatsapp.com/send?phone=254778749554" target="_blank" sx={{
                     bgcolor: "#25D366"
                 }}
                     className="cursor-pointer p-2 flex items-center justify-center rounded-lg"
