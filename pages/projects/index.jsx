@@ -7,10 +7,12 @@ import About from "../../components/About"
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import { client } from "../../utils/client"
 import Title from "../../components/Title";
+import { useMediaQuery } from "@mui/material";
 const Projects = ({ posts }) => {
     const { colors } = useGlobalProvider();
     const [page, setPage] = useState(1);
-    const [blogsPerPage, setBlogsPerPage] = useState(3);
+    const isMobile = useMediaQuery("(max-width: 600px)");
+    const [blogsPerPage, setBlogsPerPage] = useState(isMobile ? 2 : 3);
     const totalBlogs = posts?.length;
 
     useEffect(() => {
@@ -24,7 +26,7 @@ const Projects = ({ posts }) => {
     const startIndex = (page - 1) * blogsPerPage;
     const endIndex = startIndex + blogsPerPage;
     const sortedPosts = posts?.sort((a, b) => a.fields.index - b.fields.index);
-    console.log(sortedPosts)
+
     const displayedPosts = sortedPosts?.slice(startIndex, endIndex);
     const Single = ({ project }) => {
         const { fields: { title, slug, featuredImage: { fields: { file: { url } } }, description } } = project
