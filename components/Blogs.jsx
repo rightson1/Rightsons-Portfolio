@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Typography, Box, Grid, Button } from "@mui/material";
+import { motion } from 'framer-motion';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Pagination from '@mui/material/Pagination';
 import { useGlobalProvider } from "../utils/themeContext";
 import Link from "next/link";
@@ -85,22 +86,5 @@ const Blogs = ({ posts }) => {
         </div>
     </Box>;
 };
-const blogs = [
-    {
-        title: "My Tech Journey",
-        description: "A food delivery app that allows users to order food from ",
-        img: "/minutes.png"
-    },
-    {
-        title: "Rightson Tole",
-        description: "A voting website that allows users to vote for",
-        img: "/art.png"
-    },
-    {
-        title: "About School Life",
-        description: "A voting website that allows users to vote for.",
-        img: "/school.png"
-    }
 
-]
 export default Blogs;

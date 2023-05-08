@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
 import { IoLogoWhatsapp } from "react-icons/io";

@@ -5,9 +5,11 @@ import { client } from "../../utils/client";
 import { format } from "timeago.js";
 import RichText from "../../components/RichText";
 import Title from "../../components/Title";
+import Images from "../../components/Images";
+import Link from "next/link";
 const Blog = ({ post }) => {
     if (!post) return <div>loading...</div>;
-    const { title, description, featuredImage: { fields: { file: { url } } }, content, date } = post.fields
+    const { title, link, description, coverImage: { fields: { file: { url } } }, content, date, images } = post.fields
     return <Box className="py-10 ">
         <Title title={title} description={"Rightson Tole"} />
         <div className="flex flex-col px-5 py-5 gap-5">
@@ -59,6 +61,12 @@ const Blog = ({ post }) => {
                 >
                     {title}
                 </Typography>
+
+                <a className="flex items-center  mt-2 text-blue-400 self-start  cursor-pointer" target="_blank" href={link}>
+                    <Typography variant="h1" fontFamily="Questrial" className=" text-blue-500 font-jost text-xl font-[500] underline" >
+                        {link}
+                    </Typography>
+                </a>
                 <div className="py-10">
                     <img src={url} className="h-[300px] w-full md:h-[400px] md:w-3/4 object-cover" alt="" />
                 </div>
@@ -69,6 +77,7 @@ const Blog = ({ post }) => {
                         </div>
                     </div>
                 </div>
+                <Images {...{ images }} />
             </Grid>
 
 

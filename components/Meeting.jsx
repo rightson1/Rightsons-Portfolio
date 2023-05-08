@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Typography, Box, Grid, Button } from "@mui/material";
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 import Socials from "./Socials";
 const Meeting = () => {

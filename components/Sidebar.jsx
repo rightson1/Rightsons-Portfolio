@@ -5,11 +5,11 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { useGlobalProvider } from '../utils/themeContext';
-import { Button, IconButton } from '@mui/material';
+import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 export default function Sidebar({ open, setOpen }) {
     const { colors } = useGlobalProvider()
 

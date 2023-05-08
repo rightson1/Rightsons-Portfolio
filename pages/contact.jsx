@@ -1,4 +1,7 @@
-import { Box, Button, Collapse, Grid, IconButton, Typography } from "@mui/material";
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 import React from "react";
 import Meeting from "../components/Meeting"
 import Title from "../components/Title"
@@ -75,8 +78,8 @@ const Contact = () => {
                 </select>
             </Grid>
             <Grid item xs={12} md={6} className="flex flex-col items-start gap-2 " >
-                <Typography className="text-start tracking-wide font-quicksand ">
-                    Project budget
+                <Typography className="text-start tracking-wide font-quicksand text-xl">
+                    Project Budget
                 </Typography>
                 <select type="text" name="price" className="w-full p-4 bg-gray-100 font-quest rounded-md outline-none " >
                     <option className="p-2 font-jost ">1000-2999 ksh</option>

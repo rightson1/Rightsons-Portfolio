@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from 'framer-motion';
-import { Typography, Box, Grid } from "@mui/material";
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';

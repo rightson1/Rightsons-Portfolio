@@ -1,4 +1,7 @@
-import { Box, Button, Collapse, Grid, IconButton, Typography } from "@mui/material";
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 import React from "react";
 import { useGlobalProvider } from "../utils/themeContext";
 import Link from 'next/link';

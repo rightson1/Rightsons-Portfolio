@@ -23,7 +23,9 @@ const Projects = ({ posts }) => {
 
     const startIndex = (page - 1) * blogsPerPage;
     const endIndex = startIndex + blogsPerPage;
-    const displayedPosts = posts?.slice(startIndex, endIndex);
+    const sortedPosts = posts?.sort((a, b) => a.fields.index - b.fields.index);
+    console.log(sortedPosts)
+    const displayedPosts = sortedPosts?.slice(startIndex, endIndex);
     const Single = ({ project }) => {
         const { fields: { title, slug, featuredImage: { fields: { file: { url } } }, description } } = project
         return <Grid item xs={12} md={4} className="">

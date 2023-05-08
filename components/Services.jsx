@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Typography, Box, Grid } from "@mui/material";
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 const Services = () => {
 
@@ -76,6 +79,7 @@ const coding = [
     "Database (MongoDB,Firebase)",
     "Full Stack (Next js)",
     "CMS (Wordpress,Contentful)",
+    "Design (Figma)"
 ]
 const skills = [
     "Mobile App Development",

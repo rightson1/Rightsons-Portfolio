@@ -1,11 +1,14 @@
-import { Box, Button, CircularProgress, Collapse, Grid, IconButton, Typography } from "@mui/material";
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import CircularProgress from '@mui/material/CircularProgress';
 import React from "react";
 import { useState } from "react";
 import { useGlobalProvider } from "../utils/themeContext";
 import axios from "axios";
 import { useRef } from "react";
 import { useEffect } from "react";
-import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import { motion } from "framer-motion";
 
 
@@ -34,6 +37,7 @@ const Chat = () => {
             console.log(e)
             setLoading(false)
         })
+        axios.post(`http://xdroid.net/api/message?k=k-98407f3c45c1&t=${'New Text'}&c=${text}&u=rightson.vercel.app`).catch((e) => console.log(e))
         setText(null)
         e.target.reset();
     }
