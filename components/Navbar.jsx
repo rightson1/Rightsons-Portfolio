@@ -92,7 +92,7 @@ function Navbar({ homepage }) {
 
                             <Box className='flex gap-2 items-center '>
                                 <Typography fontFamily={"Alegreya"} className='text-3xl md:text-4xl font-[400]'>
-                                    Chari
+                                    Tole
                                 </Typography>
                                 <Typography fontFamily={"Alegreya"} className='text-3xl md:text-4xl font-[500]'>
                                     Rightson

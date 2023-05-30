@@ -24,10 +24,17 @@ const About = () => {
                 </Typography>
                 <div className="flex flex-col gap-8 opacity-90">
                     <Typography className="font-jost text-xl text-center text-white ">
-                        Kenyan web developer living in Nairobi, Am passionate about using technology to make a positive impact on the world. With expertise in Mongo db, React, Node.js, Next.js, Firebase, WordPress, and PHP, I am committed to developing innovative solutions that meet the needs of today&aposs ever-changing digital landscape.
+                        Kenyan web developer living in Nairobi,
+                        Am passionate about using technology to make a
+                        positive impact on the world. With expertise in Mongo db,
+                        React, Node.js, Next.js, Firebase, WordPress, and PHP,
+                        I am committed to developing innovative solutions that meet
+                        the needs of today and the ever-changing digital landscape.
                     </Typography>
                     <Typography className="font-jost text-xl text-center text-white ">
-                        Am in second-year  at Riara University, I am constantly seeking out new challenges and opportunities to grow my skills as a developer.
+                        Am in second-year  at Riara University,
+                        I am constantly seeking out new challenges and
+                        opportunities to grow my skills as a developer.
                     </Typography>
                     <Typography className="font-jost text-xl text-center text-white ">
                         Beyond my technical skills, I am an avid reader, music lover,
